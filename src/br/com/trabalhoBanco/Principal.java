@@ -5,28 +5,38 @@ public class Principal {
 
 	public static void main(String[] args) {
 
-		Conta thiago = new Conta("Thiago", "12356", 1.99, "Conta-corrente");
-		Conta ariane = new Conta("Ariane", "987456", 5000000.00, "Jurídica");
-		Conta vanessa = new Conta("Vanessa", "856974", 1000000.00, "Poupança");
-		Conta andrea = new Conta("Andrea", "658987", 50000.00, "Conta-corrente");
-		Conta ricardo = new Conta("Ricardo", "569213", 800000.00, "Poupança");
-		Conta douglas = new Conta("Douglas", "569874", 700000.00, "Jurídica");
-		// ContaClientes Deby = new ContaClientes();
+		Conta cliente01 = new Conta();
+		cliente01.titular = "Thiago Thurler";
+		cliente01.numeroConta = "12345";
+		cliente01.saldo = 1000;
+		cliente01.tipoDeConta = "Física";
 
-		// Deby.titular = "Debora";
-		// Deby.numeroConta = "569874";
-		// Deby.saldo = 5.00;
+		Conta cliente02 = new Conta();
+		cliente02.titular = "Ariane Viana";
+		cliente02.numeroConta = "98765";
+		cliente02.saldo = 2500;
+		cliente02.tipoDeConta = "Jurídica";
+	
+		
 
-		thiago.exibirExtrato();
-		ariane.exibirExtrato();
-		vanessa.exibirExtrato();
-		andrea.exibirExtrato();
-		ricardo.exibirExtrato();
-		douglas.exibirExtrato();
+		System.out.println(cliente01.titular + " Seu saldo atual é de: R$ " + cliente01.saldo);
+		System.out.println(cliente02.titular + " Seu saldo atual é de: R$ " + cliente02.saldo);
+		System.out.println("\n");
+		if(cliente01.sacar(800)) {
+			System.out.println("Saque concluído!");
+		}else {
+			System.out.println("Saldo Insuficiente...");
+		}
+		System.out.println(cliente01.titular + " Seu saldo atual após o saque é de: R$ " + cliente01.saldo);
 
-		// Deby.exibirExtrato();
+		cliente01.transferirValores(200, cliente02);
+		System.out.println(cliente01.titular + " Saldo atual após transferência: " + cliente01.saldo);
+		System.out.println(cliente02.titular + " Seu saldo atual é: " + cliente02.saldo);
 
-		// Ariane.sacar();
+		
+		System.out.println(cliente01.titular + "Seu saldo atual é de: R$ " + cliente01.saldo);
+		cliente01.depositar(100);
+		System.out.println(cliente01.titular + "Seu saldo após o depósito é de: R$ " + cliente01.saldo);
 
 	}
 }

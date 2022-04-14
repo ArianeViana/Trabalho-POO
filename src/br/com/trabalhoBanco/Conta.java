@@ -8,33 +8,40 @@ public class Conta {
 	double saldo;
 	String tipoDeConta;
 
-	// Método Especial
-
-	public Conta(String titular, String numeroConta, double saldo, String tipoDeConta) {
-		this.titular = titular;
-		this.numeroConta = numeroConta;
-		this.saldo = saldo;
-		this.tipoDeConta = tipoDeConta;
+	//Métodos 
+	public boolean sacar(double valor) {
+		if (this.saldo < valor) {
+			return false;
+		} else {
+			double novoSaldo = this.saldo - valor;
+			this.saldo = novoSaldo;
+			return true;
+		}
 	}
+	
+	public void depositar(double valor) {
+		this.saldo += valor;
 
-	// Métodos
-
+	}
+	
+	public boolean transferirValores(double valor, Conta cliente02) {
+		if (this.saldo < valor) {
+			return false;
+		} else {
+			double novoSaldo = this.saldo - valor;
+			this.saldo = novoSaldo;
+			cliente02.saldo = cliente02.saldo + valor;
+			return true;
+			
+		}
+	}
+	
+	
 	public void exibirExtrato() {
 		System.out.println(this.titular + " " + this.numeroConta + " " + this.saldo + " " + this.tipoDeConta);
 	}
 
-	// Métodos Propriedades da conta
-
-	public void sacar() {
-		System.out.println("Saquei");
-	}
-
-	public void depositar() {
-
-	}
-
-	// Métodos Tipos Operações
-
+	
 	public void transferirValores() {
 
 	}
