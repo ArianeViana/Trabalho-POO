@@ -28,14 +28,24 @@ public class Principal {
 			System.out.println("Saldo Insuficiente...");
 		}
 		System.out.println(cliente01.titular + " Seu saldo atual após o saque é de: R$ " + cliente01.saldo);
-
-		cliente01.transferirValores(200, cliente02);
+		
+// TRANFERIR
+		
+		
+			if (cliente02.transferir(100, cliente01)) {
+				System.out.println("Transferência realizada com sucesso!");
+			}else
+				System.out.println("Saldo insuficiente!");
+			
+		
+		
+		
 		System.out.println(cliente01.titular + " Saldo atual após transferência: " + cliente01.saldo);
 		System.out.println(cliente02.titular + " Seu saldo atual é: " + cliente02.saldo);
 
 		
 		System.out.println(cliente01.titular + "Seu saldo atual é de: R$ " + cliente01.saldo);
-		cliente01.depositar(100);
+		//cliente01.depositar(100);
 		System.out.println(cliente01.titular + "Seu saldo após o depósito é de: R$ " + cliente01.saldo);
 
 	}

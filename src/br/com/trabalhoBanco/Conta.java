@@ -24,15 +24,13 @@ public class Conta {
 
 	}
 	
-	public boolean transferirValores(double valor, Conta cliente02) {
-		if (this.saldo < valor) {
-			return false;
-		} else {
-			double novoSaldo = this.saldo - valor;
-			this.saldo = novoSaldo;
-			cliente02.saldo = cliente02.saldo + valor;
+	public boolean transferir(double valor, Conta contaDestino) {
+		if (this.saldo > valor) {
+			this.sacar(valor);
+			contaDestino.depositar(valor);
 			return true;
-			
+		} else {
+			return false;
 		}
 	}
 	
@@ -42,10 +40,7 @@ public class Conta {
 	}
 
 	
-	public void transferirValores() {
-
-	}
-
+	
 	public void pagarContas() {
 
 	}
