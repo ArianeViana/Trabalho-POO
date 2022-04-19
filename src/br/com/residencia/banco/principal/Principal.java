@@ -1,6 +1,8 @@
-package br.com.trabalhoBanco;
+package br.com.residencia.banco.principal;
 
 import java.io.IOException;
+
+import br.com.residencia.banco.io.LeituraEscrita;
 
 public class Principal {
 

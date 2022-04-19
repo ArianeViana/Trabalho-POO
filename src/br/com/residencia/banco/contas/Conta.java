@@ -1,4 +1,6 @@
-package br.com.trabalhoBanco;
+package br.com.residencia.banco.contas;
+
+import br.com.residencia.banco.pessoas.Cliente;
 
 public class Conta {
 

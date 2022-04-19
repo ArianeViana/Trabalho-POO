@@ -1,4 +1,4 @@
-package br.com.trabalhoBanco;
+package br.com.residencia.banco.io;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
