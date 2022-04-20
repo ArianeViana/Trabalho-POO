@@ -1,11 +1,16 @@
 package br.com.residencia.banco.pessoas;
 
-public class Diretor {
+import java.util.List;
+
+import br.com.residencia.banco.agencias.Agencia;
+
+public class Diretor extends Funcionario{
 
 	// ATRIBUTOS
 	private Integer idDiretor;
-	private String senha;
-	private float salario;
+	Integer qteAgencias;
+	List<Agencia> agencias; // = new ArrayList<>();
+	
 	
 	// MÉTODOS
 	public void aumentarSalario() {
@@ -21,34 +26,20 @@ public class Diretor {
 		this.idDiretor = idDiretor;
 	}
 
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
-	public float getSalario() {
-		return salario;
-	}
-
-	public void setSalario(float salario) {
-		this.salario = salario;
-	}
-
-	// CONSTRUTOR
-	public Diretor(Integer idDiretor, String senha, float salario) {
-		super();
-		this.idDiretor = idDiretor;
-		this.senha = senha;
-		this.salario = salario;
-	}
-	// TO STRING
-
-	@Override
-	public String toString() {
-		return "Diretor [idDiretor=" + idDiretor + ", senha=" + senha + ", salario=" + salario + "]";
-	}
+	
+//
+//	// CONSTRUTOR
+//	public Diretor(Integer idDiretor, String senhaAcesso, float salario) {
+//		super();
+//		this.idDiretor = idDiretor;
+//		this.senhaAcesso = senhaAcesso;
+//		this.salario = salario;
+//	}
+//	// TO STRING
+//
+//	@Override
+//	public String toString() {
+//		return "Diretor [idDiretor=" + idDiretor + ", senha=" + senhaAcesso + ", salario=" + salario + "]";
+//	}
 
 }

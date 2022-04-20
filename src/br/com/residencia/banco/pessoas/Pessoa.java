@@ -12,6 +12,7 @@ public class Pessoa {
 	public String telefone;
 	public Date datanascimento;
 	public String email;
+	String tipoPessoa;
 		
 	// GETTERS AND SETTERS
 	public String getNome() {
