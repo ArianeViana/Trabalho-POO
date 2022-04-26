@@ -23,13 +23,6 @@ public class Cliente extends Pessoa {
 		this.idGerente = idGerente;
 	}
 
-	// CONSTRUTOR
-	public Cliente(Integer idCliente, Integer idGerente) {
-		super();
-		this.idCliente = idCliente;
-		this.idGerente = idGerente;
-	}
-
 	// MÉTODOS
 	public void abrirConta() {
 
@@ -38,11 +31,4 @@ public class Cliente extends Pessoa {
 	public void fecharConta() {
 
 	}
-
-	// TO STRING
-	@Override
-	public String toString() {
-		return "Cliente [idCliente=" + idCliente + ", idGerente=" + idGerente + "]";
-	}
-
 }

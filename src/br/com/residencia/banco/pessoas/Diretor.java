@@ -6,6 +6,12 @@ import br.com.residencia.banco.agencias.Agencia;
 
 public class Diretor extends Funcionario{
 
+	//CONSTRUTOR
+	public Diretor(Integer idFuncionario, String senhaAcesso, String login, Double salario, String cargo) {
+		super(idFuncionario, senhaAcesso, login, salario, cargo);
+	
+	}
+
 	// ATRIBUTOS
 	private Integer idDiretor;
 	Integer qteAgencias;
@@ -26,20 +32,13 @@ public class Diretor extends Funcionario{
 		this.idDiretor = idDiretor;
 	}
 
+	public Integer getQteAgencias() {
+		return qteAgencias;
+	}
+
+	public void setQteAgencias(Integer qteAgencias) {
+		this.qteAgencias = qteAgencias;
+	}
 	
-//
-//	// CONSTRUTOR
-//	public Diretor(Integer idDiretor, String senhaAcesso, float salario) {
-//		super();
-//		this.idDiretor = idDiretor;
-//		this.senhaAcesso = senhaAcesso;
-//		this.salario = salario;
-//	}
-//	// TO STRING
-//
-//	@Override
-//	public String toString() {
-//		return "Diretor [idDiretor=" + idDiretor + ", senha=" + senhaAcesso + ", salario=" + salario + "]";
-//	}
 
 }
