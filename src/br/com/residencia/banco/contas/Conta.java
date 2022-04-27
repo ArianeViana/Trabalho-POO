@@ -1,67 +1,38 @@
 package br.com.residencia.banco.contas;
 
-import java.util.Date;
-
 public class Conta {
 	
-	Integer idConta;
-	String tipoConta;
-	String senha;
+	private Integer idConta;
+	private String tipoConta; // trocar para ENUM
+	private String senha;
 	private String numeroAgencia;
 	private String numeroConta;
 	private Double saldo;
-	Date dataAbertura;
-	boolean status;
-	
+		
 	//GETTERS AND SETTERS
 	
 	public Integer getIdConta() {
 		return idConta;
 	}
-	public void setIdConta(Integer idConta) {
-		this.idConta = idConta;
-	}
+	
 	public String getTipoConta() {
 		return tipoConta;
 	}
-	public void setTipoConta(String tipoConta) {
-		this.tipoConta = tipoConta;
-	}
-	public String getSenha() {
-		return senha;
-	}
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
+
+//	public String getSenha() {
+//		return senha;
+//	}
+	
 	public String getNumeroAgencia() {
 		return numeroAgencia;
 	}
-	public void setNumeroAgencia(String numeroAgencia) {
-		this.numeroAgencia = numeroAgencia;
-	}
+	
 	public String getNumeroConta() {
 		return numeroConta;
 	}
-	public void setNumeroConta(String numeroConta) {
-		this.numeroConta = numeroConta;
-	}
+	
 	public Double getSaldo() {
 		return saldo;
-	}
-	public void setSaldo(Double saldo) {
-		this.saldo = saldo;
-	}
-	public Date getDataAbertura() {
-		return dataAbertura;
-	}
-	public void setDataAbertura(Date dataAbertura) {
-		this.dataAbertura = dataAbertura;
-	}
-	public boolean isStatus() {
-		return status;
-	}
-	public void setStatus(boolean status) {
-		this.status = status;
 	}
 	
 //	Métodos 
@@ -90,24 +61,15 @@ public class Conta {
 			return false;
 		}
 	}
+
+	//CONSTRUTOR
+	public Conta() {
+		super();
+	}
+
+//	public void fecharConta() {
+//
+//	}
 	
-	public void exibirExtrato() {
-		
-	}
-
-	public void pagarContas() {
-
-	}
-
-	public void investir() {
-
-	}
-
-	public void pegarEmprestimo() {
-
-	}
-
-	public void fecharConta() {
-
-	}
+	
 }

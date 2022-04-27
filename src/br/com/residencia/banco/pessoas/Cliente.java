@@ -4,31 +4,25 @@ public class Cliente extends Pessoa {
 
 	// ATRIBUTOS
 	private Integer idCliente;
-	private Integer idGerente;
+	private Gerente idGerente;
 
 	// GETTERS AND SETTERS
 	public Integer getIdCliente() {
 		return idCliente;
 	}
 
-	public void setIdCliente(Integer idCliente) {
-		this.idCliente = idCliente;
-	}
-
-	public Integer getIdGerente() {
+	public Gerente getIdGerente() {
 		return idGerente;
 	}
 
-	public void setIdGerente(Integer idGerente) {
+	public void setIdGerente(Gerente idGerente) {
 		this.idGerente = idGerente;
 	}
 
-	// MÉTODOS
-	public void abrirConta() {
-
+	//CONSTRUTOR
+	public Cliente() {
+		super();
 	}
-
-	public void fecharConta() {
-
-	}
+	
+	
 }

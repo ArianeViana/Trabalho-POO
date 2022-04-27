@@ -4,9 +4,7 @@ public class ContaCorrente extends Conta {
 
 	// Atributos
 		
-	Integer idContaCorrente;
-	Double chequeEspecial;
-	Double tarifa;
+	private Integer idContaCorrente;
 	
 	//GETTERS AND SETTERS
 	
@@ -14,24 +12,9 @@ public class ContaCorrente extends Conta {
 		return idContaCorrente;
 	}
 
-	public void setIdContaCorrente(Integer idContaCorrente) {
-		this.idContaCorrente = idContaCorrente;
-	}
-
-	public Double getChequeEspecial() {
-		return chequeEspecial;
-	}
-
-	public void setChequeEspecial(Double chequeEspecial) {
-		this.chequeEspecial = chequeEspecial;
-	}
-
-	public Double getTarifa() {
-		return tarifa;
-	}
-
-	public void setTarifa(Double tarifa) {
-		this.tarifa = tarifa;
+	//CONSTRUTOR
+	public ContaCorrente() {
+		super();
 	}
 	
 	
