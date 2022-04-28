@@ -1,0 +1,9 @@
+Cliente;Cesar;12345678909;abc123
+Cliente;Bruno;09876543212;tyu543
+Cliente;Tatiane;958493027543;ope234
+Gerente;Ariane Silva;453657645;50000
+Gerente;Thiago Bryan;543657234;40000
+ContaCorrente;1;1111;4500;1
+ContaCorrente;2;1112;3000;2
+ContaCorrente;3;1113;4000;3
+ContaCorrente;4;1114;2000;4

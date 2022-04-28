@@ -44,4 +44,10 @@ public class Pessoa {
 	public Pessoa() {
 		super();
 	}
+	
+	public Pessoa(String nome, String cpf) {
+		super();
+		this.nome = nome;
+		this.cpf = cpf;
+	}
 }

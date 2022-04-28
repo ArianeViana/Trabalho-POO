@@ -1,10 +1,14 @@
 package br.com.residencia.banco.menus;
 
+import java.util.Scanner;
+
 public class MenuConta {
-	// Scanner sc = new Scanner(System.in);
+	
+	
 
-	public void menuOpcoes() {
-
+	public static void menuOpcoes() {
+		Scanner sc = new Scanner(System.in);
+		
 		System.out.println("------------------------------");
 		System.out.println("      MENU DE OPÇÕES          ");
 		System.out.println("------------------------------");
@@ -12,11 +16,12 @@ public class MenuConta {
 		System.out.println("[2] Relatórios");
 		System.out.println("[3] Sair");
 		System.out.print("Operação: ");
-		// int opcao = sc.nextInt();
-
+		
+		int opcao = sc.nextInt();
+		
 	}
 
-	public void operacoes() {
+	public static void operacoes() {
 		System.out.println("------------------------------");
 		System.out.println("      ESCOLHA UMA OPERAÇÃO    ");
 		System.out.println("------------------------------");

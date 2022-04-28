@@ -68,8 +68,14 @@ public class Conta {
 	}
 
 	// CONSTRUTOR
-	public Conta() {
-		super();
+//	public Conta() {
+//		super();
+//	}
+	
+	public Conta(Integer idConta, String numeroConta, Double saldo) {
+		this.idConta = idConta;
+		this.numeroConta = numeroConta;
+		this.saldo = saldo;
 	}
 
 //	public void fecharConta() {

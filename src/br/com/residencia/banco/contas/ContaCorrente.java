@@ -13,10 +13,14 @@ public class ContaCorrente extends Conta {
 	}
 
 	//CONSTRUTOR
-	public ContaCorrente() {
-		super();
+//	public ContaCorrente() {
+//		super();
+//	}
+//		
+	public ContaCorrente(Integer idConta, String numeroConta, Double saldo, Integer idContaCorrente) {
+		super(idConta, numeroConta, saldo);
+		this.idContaCorrente = idContaCorrente;
 	}
-	
 	
 
 }

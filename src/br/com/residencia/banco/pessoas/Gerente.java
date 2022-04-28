@@ -23,10 +23,13 @@ public class Gerente extends Funcionario {
 	}
 
 	//CONTSRUTOR
-	public Gerente() {
-		super();
-	}
+//	public Gerente() {
+//		super();
+//	}
 
-	
+	public Gerente(String nome, String cpf, Double salario) {
+		super(nome, cpf, salario);
+		
+	}
 
 }
