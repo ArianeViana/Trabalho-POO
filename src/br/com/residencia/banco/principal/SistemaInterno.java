@@ -7,6 +7,7 @@ import java.util.Scanner;
 import br.com.residencia.banco.contas.Conta;
 import br.com.residencia.banco.logins.Login;
 import br.com.residencia.banco.menus.MenuConta;
+import br.com.residencia.banco.io.Escrita;
 import br.com.residencia.banco.io.Leitura;
 
 public class SistemaInterno {
@@ -75,8 +76,10 @@ public class SistemaInterno {
 		//System.out.println(c1.getSaldo());
 		//System.out.println(c2.getSaldo());
 		
-		Leitura.leitor("arquivo.txt");
-		Login.loginCliente();
+//		Leitura.leitor("arquivo.txt");
+//		Login.loginCliente();
+		
+		Escrita.escritor();
 
 	}
 }
