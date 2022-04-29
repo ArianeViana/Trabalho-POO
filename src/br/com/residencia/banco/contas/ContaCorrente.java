@@ -13,7 +13,7 @@ public class ContaCorrente extends Conta {
 	// Atributos
 		
 	private Integer idContaCorrente;
-	private Cliente cliente;
+	private Integer idCliente;
 	private List<Double> taxaTotalDeOperacoes = new ArrayList<>(); 
 	private Map<String, Double> tipoTransacaoValor = new HashMap<>();
 	
@@ -24,7 +24,7 @@ public class ContaCorrente extends Conta {
 	}
 
 	public Integer getIdCliente() {
-		return this.cliente.getIdCliente(); // PARA CHAMAR O ID
+		return this.idCliente; 
 	}
 
 
@@ -40,10 +40,10 @@ public class ContaCorrente extends Conta {
 
 	//CONSTRUTOR
 	public ContaCorrente(Integer idConta, TipoConta tipoConta, String numeroAgencia, String numeroConta, Double saldo,
-			Integer idContaCorrente, Cliente cliente) {
+			Integer idContaCorrente, Integer idCliente) {
 		super(idConta, tipoConta, numeroAgencia, numeroConta, saldo);
 		this.idContaCorrente = idContaCorrente;
-		this.cliente = cliente;
+		this.idCliente = idCliente;
 		
 	}
 	

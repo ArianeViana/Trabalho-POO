@@ -77,7 +77,7 @@ public class Leitura {
 						setContasCorrente(contasCorrenteArray);
 					}else if(vetor[0].equalsIgnoreCase("ContaPoupanca")){
 						TipoConta tipoConta = TipoConta.POUPANCA;
-						contasPoupancaArray.add(new ContaPoupanca(Integer.parseInt(vetor[1]), tipoConta, vetor[3], vetor[4], Double.parseDouble(vetor[5]), Integer.parseInt(vetor[6]), Cliente.class.(vetor[7])));
+						contasPoupancaArray.add(new ContaPoupanca(Integer.parseInt(vetor[1]), tipoConta, vetor[3], vetor[4], Double.parseDouble(vetor[5]), Integer.parseInt(vetor[6]), Integer.parseInt(vetor[7])));
 						setContasPoupanca(contasPoupancaArray);
 					}
 				} else {

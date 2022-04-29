@@ -6,7 +6,7 @@ import br.com.residencia.banco.pessoas.Cliente;
 public class ContaPoupanca extends Conta {
 	
 	private Integer idContaPoupanca;
-	private Cliente cliente;
+	private Integer idCliente;
 	
 	
 	//GETTERS AND SETTERS
@@ -16,15 +16,15 @@ public class ContaPoupanca extends Conta {
 	}
 	
 	public Integer getIdCliente() {
-		return this.cliente.getIdCliente(); // PARA CHAMAR O ID
+		return this.idCliente;
 	}
 
 	//CONSTRUTOR
 	public ContaPoupanca(Integer idConta, TipoConta tipoConta, String numeroAgencia, String numeroConta, Double saldo,
-			Integer idContaPoupanca, Cliente cliente) {
+			Integer idContaPoupanca, Integer idCliente) {
 		super(idConta, tipoConta, numeroAgencia, numeroConta, saldo);
 		this.idContaPoupanca = idContaPoupanca;
-		this.cliente = cliente;
+		this.idCliente = idCliente;
 	}
 
 	//METODOS
