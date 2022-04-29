@@ -1,14 +1,21 @@
 package br.com.residencia.banco.contas;
 
+import br.com.residencia.banco.pessoas.Cliente;
+
 public class ContaPoupanca extends Conta {
 	
 	private Integer idContaPoupanca;
+	private Cliente cliente;
 	
 	
 	//GETTERS AND SETTERS
 	
 	public Integer getIdContaPoupanca() {
 		return idContaPoupanca;
+	}
+	
+	public Integer getIdCliente() {
+		return this.cliente.getIdCliente(); // PARA CHAMAR O ID
 	}
 
 	//CONSTRUTOR
@@ -55,13 +62,13 @@ public class ContaPoupanca extends Conta {
 	}
 	// RENDIMENTO POUPANÇA
 
-	public void calculaRendimentos(double valor, Integer dias) {
+	public String calculaRendimentos(double valor, Integer dias) {
 		if (dias < 15) {
-			System.out.println("Rendimentos só podem ser calculados acima de 14 dias.");
+			return "Rendimentos só podem ser calculados acima de 14 dias.";
 		} else {
 			double valorFinal = dias * 0.001 * valor;
-			System.out.format("Valor informado: R$" + valor + " [Seu rendimento será de: R$" + valorFinal
-					+ " no prazo informado.]");
+			return"Valor informado: R$" + valor + " [Seu rendimento será de: R$" + valorFinal + " em " 
+					+ dias + " dias.]";
 		}
 
 	}

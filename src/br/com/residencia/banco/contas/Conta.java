@@ -1,5 +1,7 @@
 package br.com.residencia.banco.contas;
 
+import br.com.residencia.banco.pessoas.Cliente;
+
 public abstract class Conta {
 
 	private Integer idConta;
@@ -8,10 +10,11 @@ public abstract class Conta {
 	private String numeroAgencia;
 	private String numeroConta;
 	protected Double saldo;
+	private Cliente cliente;
 	private static int totalDeContas;
-	private float cobraSaque;
-	private float cobraDeposito;
-	private float cobraTransferencia;
+	private static final double TAXA_SAQUE =  0.1;
+	private static final double TAXA_DEPOSITO = 0.1;
+	private static final double TAXA_TRANSFERENCIA = 0.2;
 
 	// GETTERS AND SETTERS
 
@@ -40,17 +43,18 @@ public abstract class Conta {
 		return saldo;
 	}
 	
-	public double getCobraSaque() {
-		return this.cobraSaque  + 0.1d;
+	public static double getTaxaSaque() {
+		return TAXA_SAQUE;
 	}
-	
-	public double getCobraDeposito() {
-		return this.cobraDeposito  + 0.1d;
+
+	public static double getTaxaDeposito() {
+		return TAXA_DEPOSITO;
 	}
-	
-	public double getCobraTransferencia() {
-		return cobraTransferencia + 0.2d;
+
+	public static double getTaxaTransferencia() {
+		return TAXA_TRANSFERENCIA;
 	}
+
 
 	public void setSaldo(Double saldo) { // criei para teste
 		this.saldo = saldo;
@@ -62,6 +66,9 @@ public abstract class Conta {
 
 	public void setTotalDeContas(Integer totalDeContas) {
 		this.totalDeContas = totalDeContas;
+	}
+	public Integer getIdCliente() {
+		return this.cliente.getIdCliente(); 
 	}
 
 //	Métodos 
@@ -79,22 +86,6 @@ public abstract class Conta {
 	
 
 	public abstract boolean transferir(double valor, Conta contaDestino); 
-	
-	
-	public void exibirRelatorioSacar() {
-		System.out.println("Foram descontados R$ " + this.getCobraSaque() + " do seu saque.");
-				
-	}
-	
-	public void exibirRelatorioDeposito() {
-		System.out.println("Foram descontados R$ " + this.getCobraDeposito() + " do seu depósito.");
-				
-	}
-	
-	public void exibirRelatorioTranferência() {
-		System.out.println("Foram descontados R$ " + this.getCobraTransferencia() + " do seu depósito.");
-				
-	}
 
 	// CONSTRUTOR
 	public Conta() {

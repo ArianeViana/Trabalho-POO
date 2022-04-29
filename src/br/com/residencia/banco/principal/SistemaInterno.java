@@ -7,7 +7,8 @@ import java.util.Scanner;
 import br.com.residencia.banco.contas.Conta;
 import br.com.residencia.banco.logins.Login;
 import br.com.residencia.banco.menus.MenuConta;
-import br.com.residencia.banco.io.Escrita;
+import br.com.residencia.banco.io.EscritaCorrente;
+import br.com.residencia.banco.io.EscritaPoupanca;
 import br.com.residencia.banco.io.Leitura;
 
 public class SistemaInterno {
@@ -29,7 +30,10 @@ public class SistemaInterno {
 //		Leitura.leitor("arquivo.txt");
 //		Login.loginCliente();
 		
-		Escrita.escritor();
+		//Escrita
+				EscritaCorrente.comprovanteTransacoes(null);
+				EscritaPoupanca.comprovanteRendimento(null, 0, null);
+				
 
 	}
 }
