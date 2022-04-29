@@ -15,6 +15,55 @@ public class ContaPoupanca extends Conta {
 	public ContaPoupanca() {
 		super();
 	}
+
+	//METODOS
 	
+	@Override
+	public boolean sacar(double valor) {
+		if (this.saldo < valor || valor < 0) {
+			System.out.println("Não é possível sacar esse valor");
+			return false;
+		} else {
+			System.out.println("Valor Retirado: " + valor);
+			double novoSaldo = this.saldo - valor;
+			this.saldo = novoSaldo;
+			return true;
+		}
+
+	}
+
+	@Override
+	public void depositar(double valor) {
+		if(valor < 0) {
+			System.out.println("Só é possivel fazer depósitos com valores acima de R$0,00");		
+		}else {
+			this .saldo += valor;
+		}
+	}
+			
+	
+	@Override
+	public boolean transferir(double valor, Conta contaDestino) {
+		if (this.saldo > valor) {
+			this.sacar(valor);
+			super.depositarPorTransferencia(valor, contaDestino);
+			return true;
+		} else {
+			System.out.println("Saldo Insuficiente.");
+			return false;
+		}
+	}
+	// RENDIMENTO POUPANÇA
+
+	public void calculaRendimentos(double valor, Integer dias) {
+		if (dias < 15) {
+			System.out.println("Rendimentos só podem ser calculados acima de 14 dias.");
+		} else {
+			double valorFinal = dias * 0.001 * valor;
+			System.out.format("Valor informado: R$" + valor + " [Seu rendimento será de: R$" + valorFinal
+					+ " no prazo informado.]");
+		}
+
+	}
 	
 }

@@ -1,20 +1,24 @@
 package br.com.residencia.banco.contas;
 
-public class Conta {
+public abstract class Conta {
 
 	private Integer idConta;
 	private String tipoConta; // trocar para ENUM
 	private String senha;
 	private String numeroAgencia;
 	private String numeroConta;
-	private Double saldo;
+	protected Double saldo;
+	private static int totalDeContas;
+	private float cobraSaque;
+	private float cobraDeposito;
+	private float cobraTransferencia;
 
 	// GETTERS AND SETTERS
 
 	public Integer getIdConta() {
 		return idConta;
 	}
-
+	
 	public String getTipoConta() {
 		return tipoConta;
 	}
@@ -22,55 +26,81 @@ public class Conta {
 //	public String getSenha() {
 //		return senha;
 //	}
-
+	
 	public String getNumeroAgencia() {
 		return numeroAgencia;
 	}
-
+	
 	public String getNumeroConta() {
 		return numeroConta;
 	}
+	
 
-	public Double getSaldo() {
+	public double getSaldo() {
 		return saldo;
+	}
+	
+	public double getCobraSaque() {
+		return this.cobraSaque  + 0.1d;
+	}
+	
+	public double getCobraDeposito() {
+		return this.cobraDeposito  + 0.1d;
+	}
+	
+	public double getCobraTransferencia() {
+		return cobraTransferencia + 0.2d;
 	}
 
 	public void setSaldo(Double saldo) { // criei para teste
 		this.saldo = saldo;
 	}
+	
+	public static int getTotalDeContas() {
+		return totalDeContas;
+	}
+
+	public void setTotalDeContas(Integer totalDeContas) {
+		this.totalDeContas = totalDeContas;
+	}
 
 //	Métodos 
 
-	public boolean sacar(double valor) {
-		if (this.saldo < valor) {
-			System.out.println("Saldo Insuficiete");
-			return false;
-		} else {
-			double novoSaldo = this.saldo - valor;
-			this.saldo = novoSaldo;
-			return true;
-		}
+	public abstract boolean sacar(double valor);
+
+	//PARA TRASNFERÊNCIA
+	public void depositarPorTransferencia(double valor, Conta contaDestino) {
+		System.out.printf("Valor Depositado: %.2f " , valor);
+		double novoSaldo = contaDestino.getSaldo() + valor;
+		contaDestino.saldo = novoSaldo;
 	}
 
-	public void depositar(double valor) {
-		this.saldo += valor;
+	public abstract void depositar(double valor);
+	
 
+	public abstract boolean transferir(double valor, Conta contaDestino); 
+	
+	
+	public void exibirRelatorioSacar() {
+		System.out.println("Foram descontados R$ " + this.getCobraSaque() + " do seu saque.");
+				
 	}
-
-	public boolean transferir(double valor, ContaCorrente contaDestino) {
-		if (this.saldo > valor) {
-			this.sacar(valor);
-			contaDestino.depositar(valor);
-			return true;
-		} else {
-			return false;
-		}
+	
+	public void exibirRelatorioDeposito() {
+		System.out.println("Foram descontados R$ " + this.getCobraDeposito() + " do seu depósito.");
+				
+	}
+	
+	public void exibirRelatorioTranferência() {
+		System.out.println("Foram descontados R$ " + this.getCobraTransferencia() + " do seu depósito.");
+				
 	}
 
 	// CONSTRUTOR
-//	public Conta() {
-//		super();
-//	}
+	public Conta() {
+		super();
+		this.totalDeContas = totalDeContas +1;
+	}
 	
 	public Conta(Integer idConta, String numeroConta, Double saldo) {
 		this.idConta = idConta;
