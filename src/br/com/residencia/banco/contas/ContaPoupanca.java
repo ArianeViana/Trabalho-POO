@@ -1,5 +1,6 @@
 package br.com.residencia.banco.contas;
 
+import br.com.residencia.banco.enums.TipoConta;
 import br.com.residencia.banco.pessoas.Cliente;
 
 public class ContaPoupanca extends Conta {
@@ -19,8 +20,11 @@ public class ContaPoupanca extends Conta {
 	}
 
 	//CONSTRUTOR
-	public ContaPoupanca() {
-		super();
+	public ContaPoupanca(Integer idConta, TipoConta tipoConta, String numeroAgencia, String numeroConta, Double saldo,
+			Integer idContaPoupanca, Cliente cliente) {
+		super(idConta, tipoConta, numeroAgencia, numeroConta, saldo);
+		this.idContaPoupanca = idContaPoupanca;
+		this.cliente = cliente;
 	}
 
 	//METODOS
@@ -39,6 +43,7 @@ public class ContaPoupanca extends Conta {
 
 	}
 
+	
 	@Override
 	public void depositar(double valor) {
 		if(valor < 0) {

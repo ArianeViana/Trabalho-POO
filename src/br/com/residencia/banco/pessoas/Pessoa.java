@@ -5,13 +5,11 @@ import java.util.Date;
 public class Pessoa {
 	
 	//Atributos 
-	//CHAMAR ENUM
 	private String nome;
 	private String cpf;
 	private String endereco;
 	private String telefone;
-	private Date dataNascimento;
-	
+
 		
 	// GETTERS AND SETTERS
 	public String getNome() {
@@ -36,18 +34,13 @@ public class Pessoa {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	public Date getDataNascimento() {
-		return this.dataNascimento;
-	}
+	
 
 	//CONSTRUTOR
-	public Pessoa() {
-		super();
-	}
-	
-	public Pessoa(String nome, String cpf) {
-		super();
+	public Pessoa(String nome, String cpf, String endereco, String telefone) {
 		this.nome = nome;
 		this.cpf = cpf;
+		this.endereco = endereco;
+		this.telefone = telefone;
 	}
 }

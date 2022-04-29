@@ -20,7 +20,7 @@ public class MenuConta {
 		
 		switch (opcao) {
 		case 1:
-			If (opcao == 1) {
+			if (opcao == 1) {
 				MenuConta.operacoes();
 				System.out.println("Digite o valor de saque: ");
 				double valor = sc.nextDouble();

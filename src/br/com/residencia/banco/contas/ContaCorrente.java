@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import br.com.residencia.banco.enums.TipoConta;
 import br.com.residencia.banco.pessoas.Cliente;
 
 public class ContaCorrente extends Conta {
@@ -37,17 +38,15 @@ public class ContaCorrente extends Conta {
 	}
 	
 
-
-
 	//CONSTRUTOR
-//	public ContaCorrente() {
-//		super();
-//	}
-//		
-	public ContaCorrente(Integer idConta, String numeroConta, Double saldo, Integer idContaCorrente) {
-		super(idConta, numeroConta, saldo);
+	public ContaCorrente(Integer idConta, TipoConta tipoConta, String numeroAgencia, String numeroConta, Double saldo,
+			Integer idContaCorrente, Cliente cliente) {
+		super(idConta, tipoConta, numeroAgencia, numeroConta, saldo);
 		this.idContaCorrente = idContaCorrente;
+		this.cliente = cliente;
+		
 	}
+	
 
 		//METODOS
 	@Override
@@ -65,6 +64,7 @@ public class ContaCorrente extends Conta {
 		}
 	}
 
+	
 	@Override
 	public void depositar(double valor) {
 		if (valor < 0) {

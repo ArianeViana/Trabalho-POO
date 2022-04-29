@@ -1,16 +1,15 @@
 package br.com.residencia.banco.contas;
 
+import br.com.residencia.banco.enums.TipoConta;
 import br.com.residencia.banco.pessoas.Cliente;
 
 public abstract class Conta {
 
 	private Integer idConta;
-	private String tipoConta; // trocar para ENUM
-	private String senha;
+	private TipoConta tipoConta;
 	private String numeroAgencia;
 	private String numeroConta;
-	protected Double saldo;
-	private Cliente cliente;
+	protected static Double saldo;
 	private static int totalDeContas;
 	private static final double TAXA_SAQUE =  0.1;
 	private static final double TAXA_DEPOSITO = 0.1;
@@ -22,13 +21,9 @@ public abstract class Conta {
 		return idConta;
 	}
 	
-	public String getTipoConta() {
+	public TipoConta getTipoConta() {
 		return tipoConta;
 	}
-
-//	public String getSenha() {
-//		return senha;
-//	}
 	
 	public String getNumeroAgencia() {
 		return numeroAgencia;
@@ -39,7 +34,7 @@ public abstract class Conta {
 	}
 	
 
-	public double getSaldo() {
+	public static Double getSaldo() {
 		return saldo;
 	}
 	
@@ -67,10 +62,8 @@ public abstract class Conta {
 	public void setTotalDeContas(Integer totalDeContas) {
 		this.totalDeContas = totalDeContas;
 	}
-	public Integer getIdCliente() {
-		return this.cliente.getIdCliente(); 
-	}
 
+	
 //	Métodos 
 
 	public abstract boolean sacar(double valor);
@@ -85,22 +78,21 @@ public abstract class Conta {
 	public abstract void depositar(double valor);
 	
 
-	public abstract boolean transferir(double valor, Conta contaDestino); 
+	public abstract boolean transferir(double valor, Conta contaDestino);
+
+	
 
 	// CONSTRUTOR
-	public Conta() {
+
+	public Conta(Integer idConta, TipoConta tipoConta,  String numeroAgencia, String numeroConta, Double saldo) {
 		super();
-		this.totalDeContas = totalDeContas +1;
-	}
-	
-	public Conta(Integer idConta, String numeroConta, Double saldo) {
 		this.idConta = idConta;
+		this.tipoConta = tipoConta;
+		this.numeroAgencia = numeroAgencia;
 		this.numeroConta = numeroConta;
 		this.saldo = saldo;
 	}
 
-//	public void fecharConta() {
-//
-//	}
+
 
 }

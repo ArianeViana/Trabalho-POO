@@ -4,7 +4,8 @@ public class Agencia {
 	
 	private Integer idAgencia;
 	private String endereco;
-	private Integer numeroAgencia;
+	private String numeroAgencia;
+	private Integer idGerente;
 	private Integer idDiretor;
 	
 		//GETTERS AND SETTERS
@@ -17,19 +18,29 @@ public class Agencia {
 		return endereco;
 	}
 	
-	public Integer getNumeroAgencia() {
+	public String getNumeroAgencia() {
 		return numeroAgencia;
 	}
 	
 	public Integer getIdDiretor() {
 		return idDiretor;
 	}
-
-		//CONSTRUTOR
-	public Agencia() {
-		super();
-	}
 	
+	public Integer getIdGerente() {
+		return idGerente;
+	}
+
+		
+	//CONSTRUTOR
+	public Agencia(Integer idAgencia, String endereco, String numeroAgencia, Integer idGerente, Integer idDiretor) {
+		super();
+		this.idAgencia = idAgencia;
+		this.endereco = endereco;
+		this.numeroAgencia = numeroAgencia;
+		this.idGerente = idGerente;
+		this.idDiretor = idDiretor;
+	}
+
 	
 }
 

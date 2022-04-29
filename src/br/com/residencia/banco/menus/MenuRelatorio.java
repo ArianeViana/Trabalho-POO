@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class MenuRelatorio {
 		
-	public void relatorio() {
+	public static void relatorio() {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("===================================================");
