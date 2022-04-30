@@ -7,15 +7,15 @@ import java.io.IOException;
 import br.com.residencia.banco.contas.ContaPoupanca;
 
 public class EscritaPoupanca {
+
 	final static String PATH_BASICO = "./temp/";
 	final static String EXTENSAO = ".txt";
 
 	public static void comprovanteRendimento(ContaPoupanca contaPoupanca, double valor, Integer dias)
 			throws IOException {
 
-		String nomeArquivo = contaPoupanca.getIdCliente() + " " + contaPoupanca.getNumeroAgencia() + " "
-				+ contaPoupanca.getNumeroConta() + "txt";
-		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(PATH_BASICO + nomeArquivo + EXTENSAO + true));
+		String nomeArquivo = "Simulador Rendimento";
+		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(PATH_BASICO + nomeArquivo + EXTENSAO));
 
 		String linha = "";
 		linha = "\t\t===========Rendimento============\n";
@@ -29,11 +29,7 @@ public class EscritaPoupanca {
 
 		linha = "Número da Conta: " + contaPoupanca.getNumeroConta();
 		buffWrite.append(linha + "\n");
-		
-		linha = "Saldo: " + contaPoupanca.getSaldo();
-		buffWrite.append(linha + "\n");
-		
-
+	
 		linha = "Simulação do Rendimento:\n " + contaPoupanca.calculaRendimentos(valor, dias);
 		buffWrite.append(linha + "\n");
 		
