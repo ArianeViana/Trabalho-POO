@@ -14,25 +14,19 @@ import br.com.residencia.banco.io.Leitura;
 public class SistemaInterno {
 
 	public static void main(String[] args) throws IOException {
-		// LeituraEscrita.leitor("objetoscriados.txt");
-
-		// LeituraEscrita.escritor("./");
-
-				
+						
 		// MENU CONTA CLIENTE
 		
-		MenuConta m = new MenuConta();
-		m.menuOpcoes();
-	
-		
-
-		
-//		Leitura.leitor("arquivo.txt");
-//		Login.loginCliente();
+//		MenuConta m = new MenuConta();
+//		m.menuOpcoes();
+//	
+//				
+		Leitura.leitor("arquivo.txt");
+		Login.login();
 		
 		//Escrita
-				EscritaCorrente.comprovanteTransacoes(null);
-				EscritaPoupanca.comprovanteRendimento(null, 0, null);
+//				EscritaCorrente.comprovanteTransacoes(null);
+//				EscritaPoupanca.comprovanteRendimento(null, 0, null);
 				
 
 	}

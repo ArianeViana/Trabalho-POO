@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import br.com.residencia.banco.enums.TipoConta;
+import br.com.residencia.banco.menus.MenuConta;
 import br.com.residencia.banco.pessoas.Cliente;
 
 public class ContaCorrente extends Conta {
@@ -60,6 +61,8 @@ public class ContaCorrente extends Conta {
 			this.saldo = novoSaldo;
 			this.taxaTotalDeOperacoes.add(super.getTaxaSaque());
 			this.tipoTransacaoValor.put("Saque", valor);// criei
+//			System.out.println("Saque de R$" + valor + " efetuado\n");
+//			MenuConta.menuOpcoes();
 			return true;
 		}
 	}

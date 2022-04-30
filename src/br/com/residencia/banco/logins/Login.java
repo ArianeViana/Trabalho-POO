@@ -18,8 +18,10 @@ public class Login {
 		TipoPessoa tipo = null;		
 		
 		Scanner scan = new Scanner(System.in);
-		System.out.println("=====Banco 16Bits=====\n");
-		System.out.println("CPF: ");
+		System.out.println("===================================================");
+		System.out.println("           G R U P O  3  B A N K I N G             ");
+		System.out.println("===================================================");
+		System.out.println("\nCPF: ");
 		cpf  = scan.next();
 		System.out.println("Senha: ");
 		senha = scan.next();
@@ -56,17 +58,17 @@ public class Login {
 		
 		
 		if(teste == true && tipo == TipoPessoa.CLIENTE) {			
-			System.out.println("\nOlá, " + nomeCliente + "\n");
+			System.out.println("\nOlá, " + nomeCliente);
 			MenuConta.menuOpcoes();
 		}else if(teste == true) {			
 			if(tipo == TipoPessoa.GERENTE) {
-				System.out.println("\nOlá, " + nomeGerente + "\n");
+				System.out.println("\nOlá, " + nomeGerente);
 				MenuRelatorio.relatorio();				
 			}else if(tipo == TipoPessoa.DIRETOR) {
-				System.out.println("\nOlá, " + nomeDiretor + "\n");
+				System.out.println("\nOlá, " + nomeDiretor);
 				MenuRelatorio.relatorio();
 			}else if(tipo == TipoPessoa.PRESIDENTE)	{
-				System.out.println("\nOlá, " + nomePresidente + "\n");
+				System.out.println("\nOlá, " + nomePresidente);
 				MenuRelatorio.relatorio();
 			}
 		}else {
