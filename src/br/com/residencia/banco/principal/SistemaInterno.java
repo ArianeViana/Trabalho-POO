@@ -23,7 +23,7 @@ public class SistemaInterno {
 		
 		MenuConta m = new MenuConta();
 		m.menuOpcoes();
-		m.operacoes();
+	
 		
 
 		
