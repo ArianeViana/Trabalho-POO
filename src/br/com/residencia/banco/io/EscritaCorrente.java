@@ -12,30 +12,30 @@ public class EscritaCorrente {
 	final static String PATH_BASICO = "./temp/";
     final static String EXTENSAO = ".txt";
     
-    	public static void comprovanteTransacoes(ContaCorrente contaCorrente) throws IOException {
-
-        String nomeArquivo = "Relatório de tributação";
-        BufferedWriter buffWrite = new BufferedWriter(new FileWriter(PATH_BASICO + nomeArquivo + EXTENSAO));
-        
-        String linha ="";
-        linha = "\t\t\n===========Transações============\n";
-        for (Entry<String, Double> entry : contaCorrente.getTipoTransacaoValor().entrySet()) {
-        	linha+=String.format("""
-        			ID Cliente: %s
-        			Agência: %s
-        			Conta: %s
-        			Tipo Transação: %s
-        			Valor: %.2f
-        			""",contaCorrente.getIdCliente(),contaCorrente.getNumeroAgencia(),contaCorrente.getNumeroConta()
-        				,entry.getKey(),entry.getValue());
-	    }
-        linha += "Total tarifas: R$ " + contaCorrente.getTotalTaxas();
-        linha +=String.format("\nSaldo Final: R$ %.2f " , contaCorrente.getSaldo()); 
-        linha += "\t\t\n============FIM============";
-        buffWrite.write(linha);
-        buffWrite.close();
-               	
-    	}
+//    	public static void comprovanteTransacoes(ContaCorrente contaCorrente) throws IOException {
+//
+//        String nomeArquivo = "Relatório de tributação";
+//        BufferedWriter buffWrite = new BufferedWriter(new FileWriter(PATH_BASICO + nomeArquivo + EXTENSAO));
+//        
+//        String linha ="";
+//        linha = "\t\t\n===========Transações============\n";
+//        for (Entry<String, Double> entry : contaCorrente.getTipoTransacaoValor().entrySet()) {
+//        	linha+=String.format("""
+//        			ID Cliente: %s
+//        			Agência: %s
+//        			Conta: %s
+//        			Tipo Transação: %s
+//        			Valor: %.2f
+//        			""",contaCorrente.getIdCliente(),contaCorrente.getNumeroAgencia(),contaCorrente.getNumeroConta()
+//        				,entry.getKey(),entry.getValue());
+//	    }
+//        linha += "Total tarifas: R$ " + contaCorrente.getTotalTaxas();
+//        linha +=String.format("\nSaldo Final: R$ %.2f " , contaCorrente.getSaldo()); 
+//        linha += "\t\t\n============FIM============";
+//        buffWrite.write(linha);
+//        buffWrite.close();
+//               	
+//    	}
         	       		
 //        		linha = "ID Cliente: " + contaCorrente.getIdCliente();
 //                buffWrite.append(linha + "\n");
